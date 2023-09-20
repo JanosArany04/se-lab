@@ -17,7 +17,7 @@ public class GT4500 implements SpaceShip {
 
   public boolean fireLaser(FiringMode firingMode) {
     // TODO not implemented yet
-    return true;
+    return false;
   }
 
   /**
@@ -36,7 +36,7 @@ public class GT4500 implements SpaceShip {
   @Override
   public boolean fireTorpedo(FiringMode firingMode) {
 
-    boolean firingSuccess = true;
+    boolean firingSuccess = false;
 
     switch (firingMode) {
       case SINGLE:
@@ -79,7 +79,9 @@ public class GT4500 implements SpaceShip {
       case ALL:
         // try to fire both of the torpedo stores
         //TODO implement feature
-
+  
+        firingSuccess = primaryTorpedoStore.fire(1) && secondaryTorpedoStore.fire(1);
+      
         break;
     }
 
